@@ -59,8 +59,6 @@ let totalConInteres = calcularIntereses(totalCredito)
 document.write(`El monto del credito con intereses es: <b>${totalConInteres}</b><br><br>`)
 
 
-
-
 function calcularCuotas(monto){
     let cuotas = 0
     if(monto<=2000){
@@ -80,7 +78,7 @@ return monto
 
 }
 let cuotaDelCredito = calcularCuotas(totalConInteres)
-document.write(`El monto de tu cuotas es: <b>${cuotaDelCredito}</b><br><br>`) 
+document.write(`El monto de tu cuotas es:  <b>${cuotaDelCredito}</b><br><br>`) 
 
 
 function numeroDeCuotas(totalCredito){
