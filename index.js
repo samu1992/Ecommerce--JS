@@ -13,13 +13,15 @@ const nuestroMenu = [
 ]
 const nombres = nuestroMenu.map((obj)=> obj.nombre);
 let listaProductos = prompt(`hola, que deseas pedir hoy:  ${nombres}`);
-const productoSeleccionado = nuestroMenu.find(pro=>pro.nombre === listaProductos);
 let valorProductos = 0
 let seguirComprando = true
 let agregar
 
 while(seguirComprando === true){
-    valorProductos = valorProductos + productoSeleccionado.precio
+    const productoSeleccionado = nuestroMenu.find(pro=>pro.nombre === listaProductos)
+    if (productoSeleccionado){
+        valorProductos = valorProductos + productoSeleccionado.precio
+    }
     agregar = parseInt (prompt(`Quieres agregar algo mas? 1.Si 2.No`))
     if(agregar=== 1){
         listaProductos = prompt(`hola, que deseas agregar:  ${nombres}`);
