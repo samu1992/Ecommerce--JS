@@ -16,6 +16,8 @@ let listaProductos = prompt(`hola, que deseas pedir hoy:  ${nombres}`);
 let valorProductos = 0
 let seguirComprando = true
 let agregar
+//SE AGREGO UN ELEMENTO AL ARRAY
+let nuevoProducto = nuestroMenu.push({nombre:'cafe frio',precio:550})
 
 while(seguirComprando === true){
     const productoSeleccionado = nuestroMenu.find(pro=>pro.nombre === listaProductos)
@@ -24,7 +26,7 @@ while(seguirComprando === true){
     }
     agregar = parseInt (prompt(`Quieres agregar algo mas? 1.Si 2.No`))
     if(agregar=== 1){
-        listaProductos = prompt(`hola, que deseas agregar:  ${nombres}`);
+        listaProductos = prompt(`hola, que deseas agregar:  ${nombres}`)
         valorProductos + listaProductos.precio
     }else if(agregar===2){
         seguirComprando = false
