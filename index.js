@@ -11,12 +11,18 @@ const nuestroMenu = [
     {nombre: 'tostatas francesas', precio: 1350},
     {nombre: 'huevos revueltos', precio: 1100},
 ]
+let carrito = [];
+const divisa = '$';
+const DOMitems = document.querySelector('#items');
+const DOMcarrito = document.querySelector('#carrito');
+const DOMtotal = document.querySelector('#total');
+const DOMbotonVaciar = document.querySelector('#boton-vaciar');
 const nombres = nuestroMenu.map((obj)=> obj.nombre);
 let listaProductos = prompt(`hola, que deseas pedir hoy:  ${nombres}`);
 let valorProductos = 0
 let seguirComprando = true
 let agregar
-//SE AGREGO UN ELEMENTO AL ARRAY
+//SE AGREGO UN ELEMENTO AL MENU
 let nuevoProducto = nuestroMenu.push({nombre:'cafe frio',precio:550})
 
 while(seguirComprando === true){
@@ -33,4 +39,5 @@ while(seguirComprando === true){
     }
 }
 
-alert(`que tengas buen provecho el total a pagar es ${valorProductos}`)
+alert(`que tengas buen provecho el sub-total a pagar es ${valorProductos}`)
+
