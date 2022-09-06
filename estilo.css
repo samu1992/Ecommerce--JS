@@ -51,9 +51,10 @@ body{
 	color: #222121;
 	border-radius: 10%;
 	transition: all 0.8s;
+    text-decoration: none;
 }
 .container__ul a:hover{
-	background-color: #5F8179;
+	background-color: #c3d9d5;
 }
 
 
