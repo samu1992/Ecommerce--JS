@@ -23,12 +23,12 @@ let valorProductos = 0
 let seguirComprando = true
 let agregar
 //SE AGREGO UN ELEMENTO AL MENU
-let nuevoProducto = nuestroMenu.push({nombre:'cafe frio',precio:550})
+let nuevoProducto = nuestroMenu.push({nombre:'cafe frio',precio:550});
 let nuevoProducto = nuestroMenu.push({nombre:'cafe frio',precio:550, id: 12, imagen:'imagenPrueba.jpg'});
 const titulo = document.createElement('h1');
 titulo.innerText = 'BIENVENIDOS A PARAMO CAFE'
-const domTitulo = document.querySelector('.container_titulo')
-domTitulo.appendChild(titulo)
+const domTitulo = document.querySelector('.container_titulo');
+domTitulo.appendChild(titulo);
 
 
 while(seguirComprando === true){
@@ -43,10 +43,10 @@ while(seguirComprando === true){
     }else if(agregar===2){
         seguirComprando = false
     }
-}
+};
 
-alert(`que tengas buen provecho el sub-total a pagar es ${valorProductos}`)
+alert(`que tengas buen provecho el sub-total a pagar es ${valorProductos}`);
 // Se retorno una lista de los productos en consola pero la idea es que retornen en el DOM, estoy en eso.
 let misProductos = nuestroMenu.map(function(lista) { return lista.nombre; });
-console.log(misProductos)
+console.log(misProductos);
 
