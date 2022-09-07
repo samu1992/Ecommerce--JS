@@ -13,10 +13,10 @@ const nuestroMenu = [
 ]
 let carrito = [];
 const divisa = '$';
-const Domitems = document.querySelector('#items');
-const Domcarrito = document.querySelector('#carrito');
-const Domtotal = document.querySelector('#total');
-const DombotonVaciar = document.querySelector('#boton-vaciar');
+const domItems = document.querySelector('#items');
+const domCarrito = document.querySelector('#carrito');
+const domTotal = document.querySelector('#total');
+const domBotonVaciar = document.querySelector('#boton-vaciar');
 const nombres = nuestroMenu.map((obj)=> obj.nombre);
 let listaProductos = prompt(`hola, que deseas pedir hoy:  ${nombres}`);
 let valorProductos = 0
@@ -46,4 +46,7 @@ while(seguirComprando === true){
 }
 
 alert(`que tengas buen provecho el sub-total a pagar es ${valorProductos}`)
+// Se retorno una lista de los productos en consola pero la idea es que retornen en el DOM, estoy en eso.
+let misProductos = nuestroMenu.map(function(lista) { return lista.nombre; });
+console.log(misProductos)
 
