@@ -24,6 +24,12 @@ let seguirComprando = true
 let agregar
 //SE AGREGO UN ELEMENTO AL MENU
 let nuevoProducto = nuestroMenu.push({nombre:'cafe frio',precio:550})
+let nuevoProducto = nuestroMenu.push({nombre:'cafe frio',precio:550, id: 12, imagen:'imagenPrueba.jpg'});
+const titulo = document.createElement('h1');
+titulo.innerText = 'BIENVENIDOS A PARAMO CAFE'
+const domTitulo = document.querySelector('.container_titulo')
+domTitulo.appendChild(titulo)
+
 
 while(seguirComprando === true){
     const productoSeleccionado = nuestroMenu.find(pro=>pro.nombre === listaProductos)
