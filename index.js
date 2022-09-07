@@ -13,10 +13,10 @@ const nuestroMenu = [
 ]
 let carrito = [];
 const divisa = '$';
-const DOMitems = document.querySelector('#items');
-const DOMcarrito = document.querySelector('#carrito');
-const DOMtotal = document.querySelector('#total');
-const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+const Domitems = document.querySelector('#items');
+const Domcarrito = document.querySelector('#carrito');
+const Domtotal = document.querySelector('#total');
+const DombotonVaciar = document.querySelector('#boton-vaciar');
 const nombres = nuestroMenu.map((obj)=> obj.nombre);
 let listaProductos = prompt(`hola, que deseas pedir hoy:  ${nombres}`);
 let valorProductos = 0
