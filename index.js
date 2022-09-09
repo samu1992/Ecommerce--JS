@@ -17,7 +17,6 @@ const domItems = document.querySelector('#items');
 const domCarrito = document.querySelector('#carrito');
 const domTotal = document.querySelector('#total');
 const domBotonVaciar = document.querySelector('#boton-vaciar');
-<<<<<<< HEAD
 let nuevoProducto = nuestroMenu.push({nombre:'cafe frio',precio:550, id: 12, imagen:'imagenPrueba.jpg'});
 const titulo = document.createElement('h1');
 titulo.innerText = 'BIENVENIDOS A PARAMO CAFE'
@@ -66,40 +65,6 @@ function anadirProductoAlCarrito(evento) {
     carrito.push(evento.target.getAttribute('marcador'))
     dibujarCarriro()
 }
-=======
-const nombres = nuestroMenu.map((obj)=> obj.nombre);
-let listaProductos = prompt(`hola, que deseas pedir hoy:  ${nombres}`);
-let valorProductos = 0
-let seguirComprando = true
-let agregar
-//SE AGREGO UN ELEMENTO AL MENU
-let nuevoProducto = nuestroMenu.push({nombre:'cafe frio',precio:550});
-let nuevoProducto = nuestroMenu.push({nombre:'cafe frio',precio:550, id: 12, imagen:'imagenPrueba.jpg'});
-const titulo = document.createElement('h1');
-titulo.innerText = 'BIENVENIDOS A PARAMO CAFE'
-const domTitulo = document.querySelector('.container_titulo');
-domTitulo.appendChild(titulo);
-
-
-while(seguirComprando === true){
-    const productoSeleccionado = nuestroMenu.find(pro=>pro.nombre === listaProductos)
-    if (productoSeleccionado){
-        valorProductos = valorProductos + productoSeleccionado.precio
-    }
-    agregar = parseInt (prompt(`Quieres agregar algo mas? 1.Si 2.No`))
-    if(agregar=== 1){
-        listaProductos = prompt(`hola, que deseas agregar:  ${nombres}`)
-        valorProductos + listaProductos.precio
-    }else if(agregar===2){
-        seguirComprando = false
-    }
-};
-
-alert(`que tengas buen provecho el sub-total a pagar es ${valorProductos}`);
-// Se retorno una lista de los productos en consola pero la idea es que retornen en el DOM, estoy en eso.
-let misProductos = nuestroMenu.map(function(lista) { return lista.nombre; });
-console.log(misProductos);
->>>>>>> b75eb67eaeeb34fc74d3ee66e7b3e54a4d81c2d0
 
 function dibujarCarriro() {
     domCarrito.textContent = '';
