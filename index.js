@@ -89,6 +89,7 @@ function dibujarCarriro() {
     const numeroUnidadesItem = carrito.reduce((total, itemId) => {
         return itemId === item ? total += 1 : total;
     }, 0);
+
     const miNodo = document.createElement('li');
         miNodo.classList.add('list-group-item', 'text-left', 'mx-2');
         miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
@@ -97,7 +98,6 @@ function dibujarCarriro() {
     const miBoton = document.createElement('button');
         miBoton.classList.add('btn', 'btn-danger', 'mx-5');
         miBoton.textContent = 'QUITAR';
-        miBoton.style.marginLeft = '1rem';
         miBoton.dataset.item = item;
         miBoton.addEventListener('click', borrarItemCarrito);
         miNodo.appendChild(miBoton);
