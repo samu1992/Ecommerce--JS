@@ -1,3 +1,4 @@
+let carrito = [];
 const nuestroMenu = [
     {nombre: 'cafe espresso', precio: 300, id: 1, imagen:'imagenPrueba.jpg'},
     {nombre: 'late', precio: 320, id: 2, imagen:'imagenPrueba.jpg'},
@@ -11,58 +12,48 @@ const nuestroMenu = [
     {nombre: 'tostatas francesas', precio: 1350, id: 10, imagen:'imagenPrueba.jpg'},
     {nombre: 'huevos revueltos', precio: 1100, id: 11, imagen:'imagenPrueba.jpg'}
 ];
-
-let carrito = [];
-
-const divisa = '$';
-
-const domItems = document.querySelector('#items');
-
-const domCarrito = document.querySelector('#carrito');
-
-const domTotal = document.querySelector('#total');
-
-const domBotonVaciar = document.querySelector('#boton-vaciar');
-
 let nuevoProducto = nuestroMenu.push({nombre:'cafe frio',precio:550, id: 12, imagen:'imagenPrueba.jpg'});
 
-const titulo = document.createElement('h1');
+const divisa = '$';
+const domItems = document.querySelector('#items');
+const domCarrito = document.querySelector('#carrito');
+const domTotal = document.querySelector('#total');
+const domBotonVaciar = document.querySelector('#boton-vaciar');
 
-titulo.innerText = 'BIENVENIDOS A PARAMO CAFE'
+function titulo(){
+    const titulo = document.createElement('h1');
+    titulo.innerText = 'BIENVENIDOS A PARAMO CAFE'
+    const domTitulo = document.querySelector('.container_titulo');
+    domTitulo.appendChild(titulo);
+}
 
-const domTitulo = document.querySelector('.container_titulo');
 
-domTitulo.appendChild(titulo);
-
-/**
- * Dibuja todos los productos.
- */
 function dibujarProductos() {
     nuestroMenu.forEach((info) => {
         const miNodo = document.createElement('div');
             miNodo.classList.add('card', 'col-sm-4');
-        // Body
+        
         const miNodoCardBody = document.createElement('div');
             miNodoCardBody.classList.add('card-body');
-        // Titulo
+        
         const miNodoTitle = document.createElement('h5');
             miNodoTitle.classList.add('card-title');
             miNodoTitle.textContent = info.nombre;
-        // Imagen
+        
         const miNodoImagen = document.createElement('img');
             miNodoImagen.classList.add('img-fluid');
             miNodoImagen.setAttribute('src', info.imagen);
-        // Precio
+        
         const miNodoPrecio = document.createElement('p');
             miNodoPrecio.classList.add('card-text');
             miNodoPrecio.textContent = `${info.precio}${divisa}`;
-        // Boton 
+        
         const miNodoBoton = document.createElement('button');
             miNodoBoton.classList.add('btn', 'btn-primary');
             miNodoBoton.textContent = 'agregar';
             miNodoBoton.setAttribute('marcador', info.id);
             miNodoBoton.addEventListener('click', anadirProductoAlCarrito);
-        // Insertamos
+
         miNodoCardBody.appendChild(miNodoImagen);
         miNodoCardBody.appendChild(miNodoTitle);
         miNodoCardBody.appendChild(miNodoPrecio);
@@ -119,6 +110,7 @@ function borrarItemCarrito(evento) {
     dibujarCarriro();
 }
 
-// Inicio
+
 dibujarProductos()
 dibujarCarriro()
+titulo()
