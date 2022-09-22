@@ -50,7 +50,7 @@ function dibujarProductos() {
         
         const miNodoBoton = document.createElement('button');
             miNodoBoton.classList.add('btn', 'btn-primary');
-            miNodoBoton.textContent = 'agregar';
+            miNodoBoton.textContent = 'AGREGAR';
             miNodoBoton.setAttribute('marcador', info.id);
             miNodoBoton.addEventListener('click', anadirProductoAlCarrito);
 
@@ -64,8 +64,8 @@ function dibujarProductos() {
 }
 
 function anadirProductoAlCarrito(evento) {
-    carrito.push(evento.target.getAttribute('marcador'))
-    localStorage.setItem('tuCompra',JSON.stringify(carrito))
+    carrito.push(evento.target.getAttribute('marcador'));
+    localStorage.setItem('tuCompra',JSON.stringify(carrito));
     dibujarCarriro()
 }
 
@@ -88,7 +88,7 @@ function dibujarCarriro() {
 
     const miBoton = document.createElement('button');
         miBoton.classList.add('btn', 'btn-danger', 'mx-5');
-        miBoton.textContent = 'QUITAR';
+        miBoton.textContent = 'X';
         miBoton.dataset.item = item;
         miBoton.addEventListener('click', borrarItemCarrito);
         miNodo.appendChild(miBoton);
@@ -113,4 +113,4 @@ function borrarItemCarrito(evento) {
 
 dibujarProductos()
 dibujarCarriro()
-titulo()
+titulo() 
