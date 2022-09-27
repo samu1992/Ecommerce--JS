@@ -1,4 +1,3 @@
-Swal.fire('holaaa')
 let carrito = [];
 const nuestroMenu = [
     {nombre: 'cafe espresso', precio: 300, id: 1, imagen:'imagenPrueba.jpg'},
@@ -67,6 +66,10 @@ function dibujarProductos() {
 function anadirProductoAlCarrito(evento) {
     carrito.push(evento.target.getAttribute('marcador'));
     localStorage.setItem('tuCompra',JSON.stringify(carrito));
+    Toastify({
+        text: 'agregado correctamente',
+        duration: 2000
+    }).showToast();
     dibujarCarriro();
 }
 
@@ -95,10 +98,18 @@ function dibujarCarriro() {
         miNodo.appendChild(miBoton);
         domCarrito.appendChild(miNodo);
     });
+    domTotal.textContent = calcularTotal();
 };
 
 function vaciarCarrito(){
     carrito=[];
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'carrito eliminado con exito',
+        showConfirmButton: false,
+        timer: 2500
+    });
     dibujarCarriro();
 };
 domBotonVaciar.addEventListener('click', vaciarCarrito);
@@ -108,9 +119,43 @@ function borrarItemCarrito(evento) {
     carrito = carrito.filter((carritoId) => {
         return carritoId !== id;
     });
+    Toastify({
+        text: 'producto eliminado',
+        duration: 2000,
+        gravity: "top",
+        position: "left",
+        style: {
+            background: "linear-gradient(to right, #618780, #B2EAE0)",
+        }
+    }).showToast();
     dibujarCarriro();
+};
+
+function calcularTotal() {
+    return carrito.reduce((total, item) => {
+        const miItem = nuestroMenu.filter((itemBaseDatos) => {
+            return itemBaseDatos.id === parseInt(item);
+        });
+        return total + miItem[0].precio;
+    }, 0).toFixed(2)
 };
 
 dibujarProductos();
 dibujarCarriro();
 titulo();
+
+const finalizar = document.getElementById('terminar-compra')
+finalizar.onclick = alerta
+function alerta() {
+    Swal.fire({
+        title: 'gracias por tu compra',
+        showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        }
+    });
+    carrito = [];
+    dibujarCarriro();
+};
