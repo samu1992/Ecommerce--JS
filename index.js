@@ -1,3 +1,4 @@
+Swal.fire('holaaa')
 let carrito = [];
 const nuestroMenu = [
     {nombre: 'cafe espresso', precio: 300, id: 1, imagen:'imagenPrueba.jpg'},
@@ -94,12 +95,12 @@ function dibujarCarriro() {
         miNodo.appendChild(miBoton);
         domCarrito.appendChild(miNodo);
     });
-}
+};
 
 function vaciarCarrito(){
     carrito=[];
     dibujarCarriro();
-}
+};
 domBotonVaciar.addEventListener('click', vaciarCarrito);
 
 function borrarItemCarrito(evento) {
@@ -108,9 +109,7 @@ function borrarItemCarrito(evento) {
         return carritoId !== id;
     });
     dibujarCarriro();
-}
-
-
+};
 
 dibujarProductos();
 dibujarCarriro();
