@@ -31,28 +31,28 @@ function titulo(){
 function dibujarProductos() {
     nuestroMenu.forEach((info) => {
         const miNodo = document.createElement('div');
-            miNodo.classList.add('card', 'col-sm-4');
+                miNodo.classList.add('card', 'col-sm-4');
         
         const miNodoCardBody = document.createElement('div');
-            miNodoCardBody.classList.add('card-body');
+                miNodoCardBody.classList.add('card-body');
         
         const miNodoTitle = document.createElement('h5');
-            miNodoTitle.classList.add('card-title');
-            miNodoTitle.textContent = info.nombre;
+                miNodoTitle.classList.add('card-title');
+                miNodoTitle.textContent = info.nombre;
         
         const miNodoImagen = document.createElement('img');
-            miNodoImagen.classList.add('img-fluid');
-            miNodoImagen.setAttribute('src', info.imagen);
+                miNodoImagen.classList.add('img-fluid');
+                miNodoImagen.setAttribute('src', info.imagen);
         
         const miNodoPrecio = document.createElement('p');
-            miNodoPrecio.classList.add('card-text');
-            miNodoPrecio.textContent = `${info.precio}${divisa}`;
+                miNodoPrecio.classList.add('card-text');
+                miNodoPrecio.textContent = `${info.precio}${divisa}`;
         
         const miNodoBoton = document.createElement('button');
-            miNodoBoton.classList.add('btn', 'btn-primary');
-            miNodoBoton.textContent = 'AGREGAR';
-            miNodoBoton.setAttribute('marcador', info.id);
-            miNodoBoton.addEventListener('click', anadirProductoAlCarrito);
+                miNodoBoton.classList.add('btn', 'btn-primary');
+                miNodoBoton.textContent = 'AGREGAR';
+                miNodoBoton.setAttribute('marcador', info.id);
+                miNodoBoton.addEventListener('click', anadirProductoAlCarrito);
 
         miNodoCardBody.appendChild(miNodoImagen);
         miNodoCardBody.appendChild(miNodoTitle);
@@ -66,7 +66,7 @@ function dibujarProductos() {
 function anadirProductoAlCarrito(evento) {
     carrito.push(evento.target.getAttribute('marcador'));
     localStorage.setItem('tuCompra',JSON.stringify(carrito));
-    dibujarCarriro()
+    dibujarCarriro();
 }
 
 function dibujarCarriro() {
@@ -98,9 +98,9 @@ function dibujarCarriro() {
 
 function vaciarCarrito(){
     carrito=[];
-    dibujarCarriro()
+    dibujarCarriro();
 }
-domBotonVaciar.addEventListener('click', vaciarCarrito)
+domBotonVaciar.addEventListener('click', vaciarCarrito);
 
 function borrarItemCarrito(evento) {
     const id = evento.target.dataset.item;
@@ -111,6 +111,7 @@ function borrarItemCarrito(evento) {
 }
 
 
-dibujarProductos()
-dibujarCarriro()
-titulo() 
+
+dibujarProductos();
+dibujarCarriro();
+titulo();
