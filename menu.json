@@ -1,0 +1,9 @@
+{
+    "productos":[
+        {"nombre": "cafe", "id": "01", "precio": "350"},
+        {"nombre": "cafe", "id": "02", "precio": "350"},
+        {"nombre": "cafe", "id": "03", "precio": "350"},
+        {"nombre": "cafe", "id": "04", "precio": "350"},
+        {"nombre": "cafe", "id": "05", "precio": "350"}
+    ]
+}
