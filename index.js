@@ -163,23 +163,23 @@ function alerta() {
 const containerPro = document.getElementById('desplegarProductos');
 const desplegar = document.getElementById('masProductos');
 
-desplegar.onclick = ()=>{
+desplegar.onclick = () => {
     fetch('menu.json')
-    .then(Response=>Response.json())
-    .then(info => {
-        const elMenu = info.productos
-        elMenu.forEach(infor=>{
-            const container = document.createElement('div');
-            container.classList.add('row', 'col-sm-2');
-            container.innerHTML= `<div class="card">
+        .then(Response => Response.json())
+        .then(info => {
+            const elMenu = info.productos
+            elMenu.forEach(infor => {
+                const container = document.createElement('div');
+                container.classList.add('row', 'col-sm-2');
+                container.innerHTML = `<div class="card">
                                         <img src="imagenPrueba.jpg" class="img-fluid" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title">${infor.nombre}</h5>
                                             <p class="card-text">${infor.precio}${divisa}</p>
-                                            <a href="#" class="btn btn-primary">AGREGAR</a>
+                                            <button class="btn btn-primary">AGREGAR</button>
                                         </div>
                                     </div>`
-            containerPro.append(container);
+                containerPro.append(container);
+            });
         });
-    });
-};
+    };
